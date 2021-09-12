@@ -4,7 +4,7 @@ from solver import csat_solver
 
 def test_base():
     for i in range(5):
-        with open(f'simple_tests/test{i + 1}.bench') as input_file:
+        with open(f'tests/simple_tests/test{i + 1}.bench') as input_file:
             lines = [line for line in input_file]
 
         line = ''.join(lines[0].split())
@@ -20,7 +20,7 @@ def test_base():
 
 def test_eda_tests():
     for i in range(2):
-        with open(f'bench/test{i + 1}.bench') as input_file:
+        with open(f'tests/bench/test{i + 1}.bench') as input_file:
             lines = [line for line in input_file]
 
         output_gate, gates, num_to_name = parser.parse_bench(lines)
