@@ -1,0 +1,15 @@
+# UNSAT
+
+INPUT(1)
+INPUT(2)
+INPUT(3)
+INPUT(4)
+
+OUTPUT(10)
+
+5 = AND(1, 2)
+6 = AND(3, 4)
+7 = XOR(5, 6)
+8 = NXOR(1, 7)
+9 = XOR(1, 7)
+10 = AND(8, 9)

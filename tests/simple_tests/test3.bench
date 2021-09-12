@@ -1,0 +1,10 @@
+# SAT
+
+INPUT(1)
+INPUT(2)
+INPUT(3)
+
+OUTPUT(5)
+
+4 = AND(1, 2)
+5 = OR(3, 4)

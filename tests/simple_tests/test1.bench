@@ -1,0 +1,10 @@
+# UNSAT
+
+INPUT(G0)
+INPUT(G1)
+
+OUTPUT(G4)
+
+G2 = NAND(G0, G1)
+G3 = AND(G0, G1)
+G4 = AND(G2, G3)
