@@ -1,0 +1,34 @@
+# .github/workflows/test-curcuit-sat-solver.yml
+name: Test CurcuitSATSolver
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    - cron: '*/30 * * * *'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+      - run: pip install -r requirements.txt
+      - name: Run TestProject Agent
+        env:
+          TP_API_KEY: ${{ secrets.TP_API_KEY }} # < Let Secrets handle your keys
+        run: |
+          envsubst < .github/ci/docker-compose.yml > docker-compose.yml
+          cat docker-compose.yml
+          docker-compose -f docker-compose.yml up -d
+      - name: Wait for Agent to Register
+        run: bash .github/ci/wait_for_agent.sh
+      - run: pytest
+        env:
+          TP_DEV_TOKEN: ${{ secrets.TP_DEV_TOKEN }} # < Let Secrets handle your tokens
+          TP_AGENT_URL: http://localhost:8585
