@@ -1,10 +1,9 @@
 # CurcuitSATSolver
 
-#### Солвер основан на sat-солвере pycosat, поэтому необходимо установить эту библиотеку:
-``` pip install pycosat ```
+### Curcuit SAT солвер, основанный на солвере pycosat
 
-#### Тестирование осуществляется с помощью библиотеки pytest:
-``` pip install pytest ```
+#### Установка библиотек:
+``` pip install -r requirements.txt ```
 
 #### Запуск тестов (осуществляется из корня):
 ``` pytest test_solver.py ```
