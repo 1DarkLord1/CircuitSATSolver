@@ -1,4 +1,2 @@
-testproject-python-sdk
-feedparser
 pytest
 pycosat
