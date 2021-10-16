@@ -1,6 +1,6 @@
-# CurcuitSATSolver
+# CircuitSATSolver
 
-### Curcuit SAT солвер, основанный на солвере pycosat
+### Circuit SAT солвер, основанный на солвере pycosat
 
 #### Установка библиотек:
 ``` pip install -r requirements.txt ```
